@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'header.dart';
-
+import 'categories.dart';
 void main() {
   runApp(MyApp());
 }
@@ -27,9 +27,10 @@ class Hamberger extends StatefulWidget {
 class _HambergerState extends State<Hamberger> {
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
       // スクロールすると変化したり消えたりするアニメショーンをappbarで行いたい場合に便利
-      // scaffoldのapppbarパラメータには使用されず、customscrollviewとともに使われる
+      // scaffoldのappbarパラメータには使用されず、customscrollviewとともに使われる
       body: CustomScrollView(slivers: [
         SliverAppBar(
           // appbar 固定
@@ -41,6 +42,7 @@ class _HambergerState extends State<Hamberger> {
           ],
         ),
         Header(),
+        Categories(),
         SliverList(
             delegate: SliverChildListDelegate(
           [
