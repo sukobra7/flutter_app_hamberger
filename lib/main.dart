@@ -10,7 +10,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-          appBarTheme: AppBarTheme(color: Colors.teal, centerTitle: true)),
+          appBarTheme: AppBarTheme(color: Colors.teal, centerTitle: true),
+          bottomAppBarColor: Colors.teal,
+          floatingActionButtonTheme: FloatingActionButtonThemeData(backgroundColor: Colors.orange)),
       home: Hamberger(),
       debugShowCheckedModeBanner: false,
     );
@@ -39,7 +41,49 @@ class _HambergerState extends State<Hamberger> {
           ],
         ),
         Header(),
+        SliverList(
+            delegate: SliverChildListDelegate(
+          [
+            Text(
+              'Hamberger',
+              style: TextStyle(fontSize: 300),
+            ),
+          ],
+        ))
       ]),
+      //ボタンと重なるtextを表示
+      extendBody: true,
+      // floatbuttonを真ん中に配置
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton:
+          FloatingActionButton(onPressed: () {}, child: Icon(Icons.home)),
+      // 画像などのコンテンツの角を丸くしたい場合はClipRRectが便利    
+      bottomNavigationBar: ClipRRect(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(45)),
+              child: Container(
+          color: Colors .black38,
+          child: BottomAppBar(
+            shape: CircularNotchedRectangle(),
+              child: Row(
+            children: [
+              Spacer(),
+              IconButton(
+                icon: Icon(Icons.add_alert),
+                color: Colors.white,
+                onPressed: () {},
+              ),
+              Spacer(),
+              Spacer(),
+              IconButton(
+                icon: Icon(Icons.turned_in),
+                color: Colors.white,
+                onPressed: () {},
+              ),
+              Spacer(),
+            ],
+          )),
+        ),
+      ),
     );
   }
 }
