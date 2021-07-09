@@ -12,6 +12,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
+          primaryColor: Colors.teal,
+          cardColor: Colors.white,
           appBarTheme: AppBarTheme(color: Colors.teal, centerTitle: true),
           bottomAppBarColor: Colors.teal,
           floatingActionButtonTheme:
@@ -45,7 +47,7 @@ class _HambergerState extends State<Hamberger> {
         ),
         Header(),
         Categories(),
-        
+        HambergersList(),
         
       ]),
       //ボタンと重なるtextを表示
