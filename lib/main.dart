@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'header.dart';
 import 'categories.dart';
 import 'hambergers_list.dart';
+import 'burger_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
           floatingActionButtonTheme:
               FloatingActionButtonThemeData(backgroundColor: Colors.orange)),
       home: Hamberger(),
+      routes: {BurderPage.tag: (_)=>BurderPage()},
       debugShowCheckedModeBanner: false,
     );
   }
@@ -47,7 +49,8 @@ class _HambergerState extends State<Hamberger> {
         ),
         Header(),
         Categories(),
-        HambergersList(),
+        HambergersList(row: 1),
+        HambergersList(row: 2),
         
       ]),
       //ボタンと重なるtextを表示
