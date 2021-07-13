@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
+          canvasColor: Colors.teal,
           primaryColor: Colors.teal,
           cardColor: Colors.white,
           appBarTheme: AppBarTheme(color: Colors.teal, centerTitle: true),
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
           floatingActionButtonTheme:
               FloatingActionButtonThemeData(backgroundColor: Colors.orange)),
       home: Hamberger(),
-      routes: {BurderPage.tag: (_)=>BurderPage()},
+      routes: {BurderPage.tag: (_) => BurderPage()},
       debugShowCheckedModeBanner: false,
     );
   }
@@ -35,6 +36,7 @@ class _HambergerState extends State<Hamberger> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(250, 250, 250, 255),
       // スクロールすると変化したり消えたりするアニメショーンをappbarで行いたい場合に便利
       // scaffoldのappbarパラメータには使用されず、customscrollviewとともに使われる
       body: CustomScrollView(slivers: [
@@ -51,7 +53,6 @@ class _HambergerState extends State<Hamberger> {
         Categories(),
         HambergersList(row: 1),
         HambergersList(row: 2),
-        
       ]),
       //ボタンと重なるtextを表示
       extendBody: true,
